@@ -1,0 +1,62 @@
+import { Router, type IRouter } from "express";
+import healthRouter from "./health";
+import usersRouter from "./users";
+import workspacesRouter from "./workspaces";
+import packagesRouter from "./packages";
+import retainerGroupsRouter from "./retainer-groups";
+import subscriptionsRouter from "./subscriptions";
+import requestsRouter from "./requests";
+import requestsAiRouter from "./requests-ai";
+import formsRouter from "./forms";
+import remindersRouter from "./reminders";
+import styleRouter from "./style";
+import dashboardRouter from "./dashboard";
+import reportsRouter from "./reports";
+import gocardlessSettingsRouter from "./gocardless-settings";
+import stripeSettingsRouter from "./stripe-settings";
+import topupBundlesRouter from "./topup-bundles";
+import topupsRouter from "./topups";
+import secondaryContactsRouter from "./secondary-contacts";
+import accessRequestsRouter from "./access-requests";
+import publicRouter from "./public";
+import leadsRouter from "./leads";
+import pluginsRouter from "./plugins";
+import emailTemplatesRouter from "./email-templates";
+import emailSettingsRouter from "./email-settings";
+import aiSettingsRouter from "./ai-settings";
+import platformBillingRouter from "./platform-billing";
+import blogRouter from "./blog";
+// NOTE: webhooks-gocardless is mounted in app.ts BEFORE express.json() so the
+// raw body is preserved for HMAC signature verification.
+
+const router: IRouter = Router();
+
+router.use(healthRouter);
+router.use(usersRouter);
+router.use(workspacesRouter);
+router.use(packagesRouter);
+router.use(retainerGroupsRouter);
+router.use(subscriptionsRouter);
+router.use(requestsAiRouter);
+router.use(requestsRouter);
+router.use(formsRouter);
+router.use(remindersRouter);
+router.use(styleRouter);
+router.use(dashboardRouter);
+router.use(reportsRouter);
+router.use(gocardlessSettingsRouter);
+router.use(stripeSettingsRouter);
+router.use(topupBundlesRouter);
+router.use(topupsRouter);
+router.use(secondaryContactsRouter);
+router.use(accessRequestsRouter);
+router.use(publicRouter);
+router.use(leadsRouter);
+router.use(pluginsRouter);
+router.use(emailTemplatesRouter);
+router.use(emailSettingsRouter);
+router.use(aiSettingsRouter);
+router.use(platformBillingRouter);
+router.use(blogRouter);
+
+export default router;
